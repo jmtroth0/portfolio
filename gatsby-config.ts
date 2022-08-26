@@ -7,7 +7,7 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
     siteMetadata: {
         title: `portfolio`,
-        siteUrl: `https://www.yourdomain.tld`
+        siteUrl: `https://www.jordanroth.xyz/portfolio`
     },
     graphqlTypegen: true,
 
@@ -29,6 +29,12 @@ const config: GatsbyConfig = {
         "gatsby-plugin-image",
         "gatsby-plugin-sharp",
         "gatsby-transformer-sharp",
+        {
+            resolve: `gatsby-plugin-s3`,
+            options: {
+                bucketName: "jmtr-portfolio-page",
+            },
+        },
     ]
 };
 
