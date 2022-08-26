@@ -1,3 +1,6 @@
+require("dotenv").config({
+    path: `.env.${process.env.NODE_ENV}`,
+})
 import type { GatsbyConfig } from "gatsby";
 
 
@@ -17,8 +20,8 @@ const config: GatsbyConfig = {
         {
             resolve: '@marceasen/gatsby-source-s3-image',
             options: {
-                accessKeyId: "",
-                secretAccessKey: "",
+                accessKeyId: process.env.S3_API_KEY_ID,
+                secretAccessKey: process.env.S3_API_KEY,
                 bucketName: 'jmtr-portfolio-photos',
                 region: 'us-west-2',
             },
