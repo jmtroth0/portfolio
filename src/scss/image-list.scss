@@ -4,16 +4,21 @@ ul {
     margin: 0;
 }
 
+html {
+    background: #2B2A31;
+}
+
 
 .image-list {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     flex-wrap: wrap;
 
     .image-list-item {
-        max-width: 25%;
+        max-width: 512px;
+        width: calc(33vw - 30px);
         min-width: 256px;
     }
 }

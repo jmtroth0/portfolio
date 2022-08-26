@@ -19,7 +19,6 @@ export const pageQuery = graphql`
         allS3ImageAsset(filter: {childImageSharp: {id: {ne: null}}}) {
             edges {
                 node {
-                    id
                     EXIF {
                         DateCreatedISO
                         ExposureTime
@@ -29,26 +28,6 @@ export const pageQuery = graphql`
                     childImageSharp {
                         gatsbyImageData
                     }
-                    # childrenFile {
-                    #   childImageSharp {
-                    #     original {
-                    #       height
-                    #       width
-                    #     }
-                    #     thumbnailSizes: fluid(maxWidth: 256) {
-                    #       aspectRatio
-                    #       src
-                    #       srcSet
-                    #       sizes
-                    #     }
-                    #     largeSizes: fluid(maxWidth: 1024) {
-                    #       aspectRatio
-                    #       src
-                    #       srcSet
-                    #       sizes
-                    #     }
-                    #   }
-                    # }
                 }
             }
         }
