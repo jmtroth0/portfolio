@@ -16,6 +16,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@marceasen/gatsby-source-s3-image": "^1.2.1",
     "gatsby": "^4.17.2",
     "gatsby-plugin-google-analytics": "^4.17.0",
     "gatsby-plugin-image": "^2.17.0",
