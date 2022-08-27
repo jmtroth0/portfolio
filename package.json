@@ -17,7 +17,7 @@
     "dependencies": {
         "@marceasen/gatsby-source-s3-image": "^1.2.1",
         "gatsby": "^4.17.2",
-        "gatsby-plugin-google-analytics": "^4.17.0",
+        "gatsby-plugin-google-gtag": "^4.21.0",
         "gatsby-plugin-image": "^2.17.0",
         "gatsby-plugin-sass": "^5.17.0",
         "gatsby-plugin-sharp": "^4.17.0",

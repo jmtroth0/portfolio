@@ -14,8 +14,15 @@ const config: GatsbyConfig = {
     plugins: [
         "gatsby-plugin-sass",
         {
-            resolve: 'gatsby-plugin-google-analytics',
-            options: {"trackingId": "UA-68572259-1"}
+            resolve: 'gatsby-plugin-google-gtag',
+            options: {
+                trackingIds: ["G-EBH8QKNBXT"],
+                gtagConfig: {
+                    optimize_id: "OPT_CONTAINER_ID",
+                    anonymize_ip: true,
+                    cookie_expires: 0,
+                },
+            }
         },
         {
             resolve: '@marceasen/gatsby-source-s3-image',
