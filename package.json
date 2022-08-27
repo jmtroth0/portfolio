@@ -10,7 +10,8 @@
         "build": "gatsby build",
         "serve": "gatsby serve",
         "clean": "gatsby clean",
-        "deploy": "dotenv-run-script .env && gatsby build && gatsby-plugin-s3 deploy",
+        "deploy": "gatsby-plugin-s3 deploy",
+        "bdeploy": "gatsby build && gatsby-plugin-s3 deploy",
         "typecheck": "tsc --noEmit"
     },
     "dependencies": {
