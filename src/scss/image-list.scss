@@ -20,5 +20,9 @@ html {
         max-width: 512px;
         width: calc(33vw - 30px);
         min-width: 256px;
+
+        &:hover {
+            filter: grayscale(100%);
+        }
     }
 }
