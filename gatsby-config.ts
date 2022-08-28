@@ -7,7 +7,7 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
     siteMetadata: {
         title: `portfolio`,
-        siteUrl: `https://www.jordanroth.xyz/portfolio`
+        siteUrl: `https://portfolio.jordanroth.xyz`
     },
     graphqlTypegen: true,
 
