@@ -22,8 +22,10 @@ html {
         min-width: 256px;
         flex-grow: 1;
 
-        &:hover {
-            filter: grayscale(100%);
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                filter: grayscale(100%);
+            }
         }
     }
 }
