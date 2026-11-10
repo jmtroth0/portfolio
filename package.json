@@ -11,8 +11,9 @@
         "serve": "gatsby serve",
         "clean": "gatsby clean",
         "deploy": "gatsby-plugin-s3 deploy",
-        "bdeploy": "gatsby build && gatsby-plugin-s3 deploy",
-        "typecheck": "tsc --noEmit"
+        "bdeploy": "gatsby build && gatsby-plugin-s3 deploy && npm run invalidate",
+        "typecheck": "tsc --noEmit",
+        "invalidate": "aws cloudfront create-invalidation --distribution-id E6XNXE0AVQK1B --paths \"/*\""
     },
     "dependencies": {
         "@marceasen/gatsby-source-s3-image": "^1.2.1",

@@ -1,15 +1,24 @@
 import * as React from "react"
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { Link } from 'gatsby';
+import { GatsbyImage } from "gatsby-plugin-image";
+import type { IGatsbyImageData } from "gatsby-plugin-image";
 
-const ImageListItem = (props) => {
+export interface Photo {
+    image: IGatsbyImageData;
+    alt: string;
+}
+
+interface ImageListItemProps {
+    photo: Photo;
+}
+
+const ImageListItem = ({ photo }: ImageListItemProps) => {
     return (
         <li className="image-list-item">
-            <Link href={ props.photo.images.fallback.src } target="_blank">
-                <GatsbyImage className="image" image={getImage(props.photo)} alt="image" />
-            </Link>
+            <a href={photo.image.images.fallback?.src} target="_blank" rel="noopener noreferrer">
+                <GatsbyImage className="image" image={photo.image} alt={photo.alt} />
+            </a>
         </li>
     )
-  }
+}
 
 export default ImageListItem;
