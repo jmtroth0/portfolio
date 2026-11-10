@@ -31,6 +31,9 @@ const config: GatsbyConfig = {
                 secretAccessKey: process.env.S3_API_KEY,
                 bucketName: 'jmtr-portfolio-photos',
                 region: 'us-west-2',
+                // The plugin ignores `region` and defaults to the global endpoint, which
+                // answers PermanentRedirect for buckets outside us-east-1.
+                domain: 's3.us-west-2.amazonaws.com',
             },
         },
         "gatsby-plugin-image",
