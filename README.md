@@ -21,7 +21,7 @@ The plugin lists the bucket once with no pagination, so it sees at most 1,000 ob
 ```shell
 npm install
 npm run develop     # http://localhost:8000
-npm run typecheck   # needs a prior develop/build, which generates the GraphQL query types
+npm run typecheck   # the page's query result type is hand-written in src/pages/index.tsx; keep it in sync with the query
 ```
 
 The build downloads photos from S3, so it needs AWS credentials that can read `jmtr-portfolio-photos`. Either put `S3_API_KEY_ID` and `S3_API_KEY` in a `.env.development` / `.env.production` file (gitignored), or use any other method in the AWS default credential chain, such as `AWS_PROFILE` or exported `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` and `AWS_SESSION_TOKEN`.

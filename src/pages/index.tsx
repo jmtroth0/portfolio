@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import type { HeadFC, PageProps } from "gatsby"
+import type { IGatsbyImageData } from "gatsby-plugin-image"
 import ImageList from "../components/image-list"
 import type { Photo } from "../components/image-list-item"
 
@@ -14,7 +15,20 @@ const altFromKey = (key: string): string => {
     return name ? name : "Portfolio photo"
 }
 
-const PortfolioPage = ({ data }: PageProps<Queries.PhotographyPostsQuery>) => {
+// Shape of the page query below. Written by hand because Gatsby only generates
+// query types (src/gatsby-types.d.ts, gitignored) during `gatsby develop`.
+interface PhotographyPostsData {
+    allS3ImageAsset: {
+        edges: ReadonlyArray<{
+            node: {
+                Key: string
+                childImageSharp: { gatsbyImageData: IGatsbyImageData } | null
+            }
+        }>
+    }
+}
+
+const PortfolioPage = ({ data }: PageProps<PhotographyPostsData>) => {
     const photos: Photo[] = []
     for (const { node } of data.allS3ImageAsset.edges) {
         const image = node.childImageSharp?.gatsbyImageData
