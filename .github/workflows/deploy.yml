@@ -19,17 +19,17 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
-          node-version: 18
+          node-version: 22
           cache: npm
 
       # No long-lived keys: GitHub exchanges its OIDC token for short-lived
       # credentials for the role in the AWS_ROLE_ARN secret. The build (photo
       # download), the S3 upload and the CloudFront invalidation all use them.
-      - uses: aws-actions/configure-aws-credentials@v4
+      - uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: us-west-2
